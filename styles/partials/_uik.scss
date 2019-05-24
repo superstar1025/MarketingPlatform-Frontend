@@ -1,0 +1,126 @@
+.uik-btn__base:hover a,
+.uik-btn__base:hover a:hover {
+  text-decoration: none;
+  color: #3e3f42;
+}
+
+.uik-btn__base.uik-btn__error:hover a,
+.uik-btn__base.uik-btn__error:hover a:hover,
+.uik-btn__base.uik-btn__success:hover a,
+.uik-btn__base.uik-btn__success:hover a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav .nav-link,
+.nav .copyright,
+.nav .credit-count,
+.form-right-sub-label,
+.uik-checkbox__wrapper .uik-checkbox__label,
+div.ReactTags__tagInput input.ReactTags__tagInputField,
+div.ReactTags__tagInput input.ReactTags__tagInputField:focus,
+.uik-checkbox__wrapper .uik-checkbox__label,
+.uik-top-bar-title__wrapper {
+  font-size: 14px;
+}
+
+#root .create-product-page .uik-content-title__wrapper,
+.error-message,
+.success-message,
+.nav .nav-label {
+  font-size: 12px;
+}
+
+.nav .subtext {
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 0;
+}
+
+.nav .credit-count {
+  margin-bottom: 0;
+}
+
+.form-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.uik-top-bar-title__wrapper {
+  margin-bottom: 0;
+}
+
+.uik-content-title__wrapper + * {
+  margin-top: 25px;
+}
+
+.uik-headline-desc__wrapper + * {
+  margin-top: 15px;
+}
+
+.uik-emoji-headline__emojiBox {
+  padding: 10px 10px 0 10px;
+  margin-right: 0;
+}
+
+.uik-select__optionListWrapper.uik-select__bottomLeft {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .uik-widget-content__wrapper {
+    padding: 15px;
+  }
+}
+
+.elliot-modal {
+  .uik-widget__wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .uik-widget-content__wrapper:nth-of-type(2) {
+    flex-grow: 1;
+  }
+
+  .uik-widget-title__wrapper {
+    flex-shrink: 0;
+  }
+
+  @include sm-screen {
+    .uik-widget__wrapper {
+      border-radius: 0;
+    }
+    .uik-widget-title__wrapper {
+      position: sticky;
+      background-color: white;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: $modal-z-index;
+    }
+  }
+}
+
+.loading-dots-dark {
+  .uik-loader-dots__dotloader1,
+  .uik-loader-dots__dotloader2 {
+    background-color: $elliot-color-grey;
+  }
+}
+
+.uik-top-bar-title__wrapper i {
+  margin-right: 0;
+}
+
+.catalog-list-inputs {
+  flex-shrink: 0;
+  @include sm-screen {
+    .uik-btn__base {
+      width: 100%;
+    }
+  }
+}

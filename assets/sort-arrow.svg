@@ -1,0 +1,20 @@
+
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M5.9976391,6.94312516 L2.94312516,9.9976391 L-1.73194792e-14,7.05451394 L5.9976391,6.94312516 Z M-4.26325641e-14,3.0450687 L3.0450687,1.77635684e-15 L5.97909306,2.93402436 L-4.26325641e-14,3.0450687 Z" id="path-1"></path>
+    </defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Catalog---Products" transform="translate(-525.000000, -194.000000)">
+            <g id="Widget/12-Col/All-Files-Table" transform="translate(300.000000, 98.000000)">
+                <g id="Headers" transform="translate(0.000000, 78.000000)">
+                    <g id="Icon/Dropdown-Arrow" transform="translate(225.000000, 18.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Arrow" fill="#9EA0A5" opacity="0" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

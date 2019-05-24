@@ -1,0 +1,36 @@
+.button {
+  @include form-input-and-button-dimensions;
+}
+.button-primary {
+  @include button-primary;
+}
+
+.button-disabled {
+  @include button-primary;
+  opacity: 0.5;
+}
+
+.button-blue {
+  @include button-primary;
+  background-color: $elliot-color-blue;
+}
+
+.button-royal-blue {
+  @include button-primary;
+  background-color: $elliot-color-royal-blue;
+}
+
+button {
+  cursor: pointer;
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.uik-btn__base i {
+  opacity: 1;
+}

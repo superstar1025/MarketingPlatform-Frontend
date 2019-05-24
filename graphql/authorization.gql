@@ -1,0 +1,56 @@
+mutation tokenAuth($email: String!, $password: String!) {
+  tokenAuth(email: $email, password: $password) {
+    token
+  }
+}
+
+mutation register(
+  $email: String!
+  $firstName: String!
+  $lastName: String!
+  $password: String!
+  $domainLabel: String!
+) {
+  register(
+    input: {
+      user: {
+        email: $email
+        firstName: $firstName
+        lastName: $lastName
+        password: $password
+      }
+      domain: { label: $domainLabel }
+    }
+  ) {
+    user {
+      id
+      email
+      firstName
+      lastName
+    }
+    domain {
+      id
+    }
+  }
+}
+
+mutation resetPassword($email: String!) {
+  resetPassword(input: { email: $email }) {
+    user {
+      email
+    }
+  }
+}
+
+mutation resetPasswordConfirm(
+  $password: String!
+  $passwordResetToken: String!
+) {
+  resetPasswordConfirm(
+    input: { password: $password, passwordResetToken: $passwordResetToken }
+  ) {
+    user {
+      email
+    }
+  }
+}

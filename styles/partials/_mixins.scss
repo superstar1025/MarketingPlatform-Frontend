@@ -1,0 +1,115 @@
+@mixin button-primary {
+  background-color: $elliot-color-success;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+@mixin elliot-font-family-body {
+  color: $elliot-color-alternative;
+  font-size: $elliot-font-size-default;
+  font-family: $elliot-font-family-default;
+  font-weight: $elliot-font-weight-default;
+  line-height: $elliot-line-height-default;
+}
+
+@mixin form-input-and-button-dimensions {
+  width: 100%;
+  height: 38px;
+  border-radius: 4px;
+}
+
+@mixin error-message {
+  font-weight: 700;
+  font-size: 12px;
+  color: $elliot-color-failure;
+  display: block;
+}
+
+@mixin success-message {
+  font-weight: 700;
+  font-size: 12px;
+  color: $elliot-color-success;
+  display: block;
+}
+
+@mixin subtext {
+  color: $elliot-color-subtext;
+}
+
+@mixin grey-border {
+  border: 1px solid $elliot-color-grey-border;
+}
+@mixin rounded-border {
+  @include grey-border;
+  border-radius: 4px;
+}
+
+@mixin container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@mixin container-white-background {
+  @include rounded-border;
+  @include container;
+  background-color: white;
+}
+
+@mixin bolder-text {
+  font-weight: 500;
+}
+
+@mixin thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin fill-dimensions {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin label {
+  @include bolder-text;
+  line-height: 1.125rem;
+  font-size: 12px;
+  color: $elliot-color-grey;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+// BASIC RESPONSIVE MIXINS
+// Small devices
+@mixin sm-screen {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md-screen {
+  @media (max-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg-screen {
+  @media (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl-screen {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}

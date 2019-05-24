@@ -1,0 +1,286 @@
+.form-input,
+.form-input-lg,
+.uik-input__input {
+  @include form-input-and-button-dimensions;
+  background: #ffffff;
+  border: 1px solid $elliot-color-grey-border;
+  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.form-input-lg {
+  height: 90px;
+  resize: none;
+}
+
+.form-field {
+  margin-bottom: 15px;
+  position: relative;
+  .custom-select {
+    width: 100%;
+    color: #3E3F42;
+    height: 36px;
+    background: transparent;
+    border-color: #cfd3e0;
+  }
+}
+
+.form-label {
+  @include label;
+
+  label {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.error-message,
+.success-message {
+  margin-top: 8px;
+}
+
+.error-message {
+  ul {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+}
+
+.form-button {
+  margin-top: 30px;
+}
+
+.form-field-link {
+  position: absolute;
+  bottom: 9px;
+  right: 15px;
+  font-size: 14px;
+}
+
+.form-container {
+  @include container-white-background;
+}
+
+.image-upload-thumbnails {
+  display: flex;
+  margin: -10px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    flex-grow: 1;
+  }
+}
+
+.image-tile {
+  position: relative;
+  .delete-drag-item {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: $elliot-color-failure;
+    z-index: $delete-drag-item;
+    color: white;
+  }
+
+  &:active {
+    .delete-drag-item {
+      display: none;
+    }
+  }
+  &:hover {
+    .delete-drag-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2%;
+    }
+  }
+}
+
+// IMPORTANT NOTICE: THIS MUST REMAIN OUTSIDE OF ANY PARENT SELECTOR
+// THIS IS REQUIRED BECAUSE A TEMPORARY DIV IS PLACED AT THE BASE OF THE BODY TAG
+// DURING A DRAG — https://github.com/clauderic/react-sortable-hoc#item-disappearing-when-sorting--css-issues
+li.draggable-item {
+  @include thumbnail;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+
+  @include sm-screen {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+// END NOTICE
+
+.form-section {
+  border-bottom: 1px solid $elliot-color-grey-border;
+  padding: $base-padding-lg;
+  min-height: 75px;
+
+  @include sm-screen {
+    padding: $base-padding-sm;
+  }
+
+  &:last-child {
+    border: none;
+  }
+
+  .image-upload-placeholder {
+    @include bolder-text;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 0 50px 0;
+    svg {
+      margin-bottom: 15px;
+    }
+  }
+
+  .dropzone {
+    @include bolder-text;
+    text-align: center;
+
+    .error-message {
+      margin: 0;
+    }
+  }
+  .drop-cursor {
+    cursor: copy;
+  }
+  .no-drop-cursor {
+    cursor: no-drop;
+  }
+}
+
+.form-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -15px 0;
+    width: auto;
+    // padding: 10px 0;
+    svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+.form-row {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  & > * {
+    flex-grow: 1;
+  }
+}
+
+.form-columns {
+  display: flex;
+  flex-wrap: wrap;
+  .form-column {
+    > div:not(:first-child) {
+      margin: 30px 0;
+    }
+  }
+  .form-column:first-child {
+    width: 70%;
+  }
+  .form-column::last-child {
+    width: 30%;
+  }
+
+  @include sm-screen {
+    .form-column:first-child {
+      width: 100%;
+    }
+    .form-column::last-child {
+      width: 100%;
+    }
+  }
+}
+
+.form-input-select {
+  display: flex;
+  align-items: flex-end;
+  .form-field {
+    margin: 0;
+  }
+  .form-input {
+    border-radius: 4px 0 0 4px;
+  }
+  .uik-btn__base {
+    border-radius: 0 4px 4px 0;
+    border-left: none !important;
+  }
+}
+
+.form-headline-desc {
+  color: $elliot-color-grey;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.form-right-label {
+  font-weight: 500;
+  font-size: 16px;
+  color: #3e3f42;
+  line-height: 28px;
+}
+
+.form-right-sub-label {
+  font-size: 0.875rem;
+  color: #6b6c6f;
+  line-height: 1.375rem;
+  margin-bottom: 10px;
+}
+
+.form-column-right {
+  .uik-widget-content__wrapper {
+    padding-top: 0;
+  }
+}
+
+.datetime-range {
+  display: flex;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    tr td {
+      padding: 0;
+      width: 10px;
+      height: 10px;
+    }
+    div {
+      padding: 0%;
+    }
+  }
+  .DateTimePicker__Flex-sc-1kybx8t-0 {
+    tr:nth-child(even){background-color: #f2f2f2}
+    border: 1px solid #ddd;
+    flex-wrap: wrap;
+    color: $elliot-color-grey;
+    background: transparent;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .form-columns .form-column:first-child {
+    width: 100%;
+  }
+}

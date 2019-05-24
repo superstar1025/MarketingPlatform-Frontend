@@ -1,0 +1,8 @@
+{
+  "_name": "dashboard",
+  "title": "Dashboard",
+  "sellerOverview": "Seller Overview",
+  "latestOrders": "Latest Orders",
+  "viewAllOrders": "View all orders",
+  "noOrdersHaveBeenPlaced": "No orders have been placed."
+}

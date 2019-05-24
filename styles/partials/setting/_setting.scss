@@ -1,0 +1,289 @@
+.add_user_modal {
+  max-width: 350px;
+}
+
+.location-modal {
+  max-width: 730px;
+  max-height: fit-content;
+}
+
+.promo_code_modal {
+  max-width: 730px;
+  max-height: fit-content;
+
+  .promotion-form-group {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .discount {
+    width: 100%;
+  }
+
+  .promo-form-input-select {
+    display: flex;
+    align-items: flex-end;
+
+    .form-field {
+      margin: 0;
+    }
+
+    .form-input {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .uik-select__optionListWrapper {
+      min-width: auto;
+    }
+    .uik-btn__base {
+      border-radius: 0 4px 4px 0;
+      border-left: none !important;
+    }
+  }
+}
+.settings {
+  display: flex;
+  flex-flow: row;
+
+  @media (max-width: 768px) {
+    flex-flow: column;
+  }
+
+  .settings-list {
+    max-width: 300px;
+    min-width: 260px;
+    flex-basis: 20%;
+    margin-right: 30px;
+    z-index: 1;
+
+    @media (max-width: 1679px) {
+      flex-basis: 30%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: none;
+      position: absolute;
+      width: calc(100% - 40px);
+    }
+
+    .setting-widget {
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      .setting-widget-section {
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        .widget-item {
+          display: flex;
+          padding: 0 30px;
+          align-items: center;
+          min-height: 40px;
+          justify-content: space-between;
+          color: $elliot-color-alternative;
+          font-size: .875rem;
+          font-family: 'Roboto-Medium';
+          border-radius: 4px;
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-left: 14px;
+          margin-right: 14px;
+        }
+
+        .item-header {
+          padding-bottom: 12px;
+          padding-top: 12px;
+        }
+
+        .activated {
+          background-color: $elliot-color-royal-blue;
+          color: $elliot-color-background;
+
+          &:hover {
+            color: $elliot-color-background;
+          }
+        }
+      }
+    }
+  }
+
+  .settings-main {
+    display: block;
+    flex-basis: 80%;
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+      min-width: 260px;
+    }
+    .setting-panel {
+      height: 100%;
+      .setting-loading {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+    .setting-section {
+      margin-bottom: 30px;
+
+      .section-header {
+        .title {
+          font-weight: 500;
+          font-family: 'Roboto-Medium';
+        }
+
+        .users-name {
+          font-family: 'Roboto-Regular';
+          font-size: 14px;
+        }
+
+        .users-role {
+          font-family: 'Roboto-Regular';
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .description {
+          font-family: 'Roboto-Regular';
+          font-size: 14px;
+          color: $elliot-color-grey;
+        }
+
+        .location-details {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .setting-remove-buttons {
+          text-align: center;
+          .setting-btn {
+            color: $elliot-color-grey;
+            margin-right: 20px;
+            @media (max-width: 768px) {
+              margin-right: 0px;
+            }
+          }
+
+          .remove-btn {
+            color: $elliot-color-grey;
+          }
+        }
+
+        .payment-setting {
+          padding-top: 14px;
+          padding-bottom: 14px;
+
+          .paypal-icon {
+            content: url("../assets/paypal.svg");
+          }
+
+          .stripe-icon {
+            content: url("../assets/stripe.svg");
+          }
+        }
+
+        .sub-title {
+          font-size: 14px;
+          font-family: 'Roboto-Regular';
+          color: $elliot-color-alternative
+        }
+      }
+
+      .section-content {
+        .business-form-select {
+          width: 100%;
+
+          .uik-select__optionListWrapper {
+            width: 100%;
+          }
+        }
+
+        .key-info {
+          .tab-label {
+            font-family: 'Roboto-Medium';
+            font-size: 12px;
+            color: $elliot-color-grey;
+          }
+
+          .quill {
+            .ql-toolbar {
+              border-top-left-radius: 4px;
+              border-top-right-radius: 4px;
+            }
+
+            .ql-container {
+              height: 150px;
+              border-bottom-left-radius: 4px;
+              border-bottom-right-radius: 4px;
+            }
+          }
+        }
+
+        .minimum-order-value {
+          width: 50%;
+        }
+
+        .paypal-address {
+          width: 50%;
+        }
+
+        .custom-select {
+          color: $elliot-color-alternative;
+          height: 36px;
+          background: transparent;
+          border-color: #cfd3e0;
+        }
+      }
+
+      .promo-table-section {
+        overflow-x: auto;
+        .promo-title {
+          font-weight: 500;
+        }
+        .remove-btn {
+          color: $elliot-color-grey;
+        }
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+
+        th,
+        td {
+          text-align: left;
+          padding: 8px;
+        }
+      }
+
+      .deactive {
+        display: none;
+      }
+
+      .key-info-tab {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .divider-wrapper {
+        padding: 15px 30px;
+
+        .divider {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.hide-item {
+  display: none;
+}

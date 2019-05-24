@@ -1,0 +1,266 @@
+.ReactModal__Overlay {
+  @include sm-screen {
+    // margin-right: -12px;
+  }
+}
+
+.elliot-modal {
+  z-index: $modal-z-index;
+  padding: 0;
+  width: 50%;
+  max-height: 75%;
+  height: auto;
+  position: static;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  @include sm-screen {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.reorder-variants-modal {
+  .attribute-row {
+    display: flex;
+    align-items: center;
+    > * {
+      flex-basis: 50%;
+    }
+  }
+  .ReactTags__tagInput,
+  .ReactTags__remove {
+    display: none;
+  }
+
+  .react-tags-wrapper {
+    border: none;
+    box-shadow: none;
+  }
+
+  .attribute-row {
+    .draggable-item {
+      align-items: center;
+
+      &:before {
+        margin: auto 10px auto 0;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  .attribute-row:first-child {
+    .draggable-item {
+      color: $elliot-color-purple;
+      &:before {
+        content: url("../assets/move-icon.svg");
+      }
+    }
+    .tag-wrapper {
+      background-color: $elliot-color-purple;
+    }
+  }
+  .attribute-row:nth-child(2) {
+    .draggable-item {
+      color: $elliot-color-seafoam;
+      &:before {
+        content: url("../assets/move-icon-seafoam.svg");
+      }
+    }
+    .tag-wrapper {
+      background-color: $elliot-color-seafoam;
+    }
+  }
+  .attribute-row:nth-child(3) {
+    .draggable-item {
+      color: $elliot-color-orange;
+      &:before {
+        content: url("../assets/move-icon-orange.svg");
+      }
+    }
+    .tag-wrapper {
+      background-color: $elliot-color-orange;
+    }
+  }
+
+  span.tag-wrapper.ReactTags__tag.cursor-move {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    &:before {
+      padding-top: 5px;
+      margin-right: 10px;
+      content: url("../assets/move-icon-white.svg");
+    }
+  }
+}
+
+.edit-variant-modal-middle {
+  .edit-variant-properties {
+    font-weight: bold;
+
+    .attributes {
+      div:nth-of-type(1) {
+        color: $elliot-color-purple;
+      }
+      div:nth-of-type(2) {
+        color: $elliot-color-seafoam;
+      }
+      div:nth-of-type(3) {
+        color: $elliot-color-orange;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+    }
+
+    .attribute-values {
+      text-align: right;
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .upload-image-section {
+    margin-bottom: 22px;
+  }
+  .edit-variant-image-upload {
+    img {
+      margin-right: 30px;
+    }
+  }
+}
+
+.wallet-modal {
+  .elliot-wallet-card {
+    height: 175px;
+    padding: 15px;
+    background-image: radial-gradient(circle at 50% 50%, #38B148 0%, #2D9C3C 100%);
+    box-shadow: 1px 3px 4px 0 rgba(0,0,0,0.12);
+    border-radius: 10px;
+    color: #fff;
+    .logo {
+      height: 50%;
+      svg {
+        height: 25px;
+      }
+    }
+    .current-balance {
+      height: 50%;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      font-weight: 600;
+      .credit-count {
+        font-size: 1.75rem;
+      }
+      .credit-subtext {
+        font-size: 0.625rem;
+        text-transform: uppercase;
+        line-height: 0.625rem;
+        padding-top: 0.5rem;
+      }
+    }
+  }
+  .elliot-wallet-card.invalid {
+    background-image: radial-gradient(circle at 50% 50%, #E73C1E 0%, #FF2600 100%);
+  }
+  .wallet-payment-methods {
+    .content-header {
+      padding-top: 1.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .card-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .link-button {
+      padding: 0;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $elliot-color-royal-blue;
+    }
+  }
+  .error-section {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    span {
+      line-height: 1.125rem;
+      font-weight: 500;
+    }
+    p.strong {
+      font-weight: 800;
+    }
+    .description {
+      padding-top: 1rem;
+      color: $elliot-color-failure;
+    }
+  }
+  .invoice-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1rem;
+    .invoice-link-button {
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+      color: $elliot-color-royal-blue;
+    }
+  }
+  .content-header {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .addons-item {
+    padding-top: 1.25rem;
+  }
+  .specify-credit-field {
+    margin-top: 1rem;
+  }
+  .payment-card-icon {
+    color: $elliot-color-alternative;
+    zoom: 2;
+    padding-right: 1rem;
+  }
+  .payment-card-label {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.modal-load-root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  .modal-loader-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(62, 63, 66, 0.5);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

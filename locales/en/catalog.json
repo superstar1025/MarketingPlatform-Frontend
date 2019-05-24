@@ -1,0 +1,147 @@
+{
+  "_name": "catalog",
+  "empty": {
+    "_name": "empty",
+    "emoji": "🤔",
+    "header": "Don’t think too hard, lets create your first product!",
+    "subheader": "Simply create products, generate Buy Now links or QR Codes, and share.",
+    "createProduct": "Create a Product",
+    "import": "Import from"
+  },
+  "products": {
+    "_name": "products",
+    "all": "All",
+    "availability": "Availability",
+    "gender": "Gender",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "price": "Price",
+    "product": "Product",
+    "searchPlaceholder": "Search products",
+    "buyNowLinks": "Buy Now Links",
+    "qrCodes": "QR Codes",
+    "inventory": "Inventory",
+    "headerCatalog": "Catalog",
+    "headerManageProducts": "Manage your products"
+  },
+  "product": {
+    "_name": "product",
+    "headerBack": "Back to catalog",
+    "createProduct": {
+      "_name": "createProduct",
+      "title": "Create a product",
+      "subtitle": "Save to view and add 'Buy Now' links or QR Codes"
+    },
+    "formLabels": {
+      "_name": "formLabels",
+      "productInfo": {
+        "_name": "productInfo",
+        "title": "Title",
+        "titlePlaceholder": "Product Name",
+        "description": "Description",
+        "descriptionPlaceholder": "Product Description"
+      },
+      "status": {
+        "_name": "status",
+        "sectionHeader": "Status",
+        "prompt": "Mark whether or not a customer can see your product:",
+        "live": "Live",
+        "visible": "Visible"
+      },
+      "gender": {
+        "_name": "gender",
+        "sectionHeader": "Gender",
+        "prompt": "Who is your product intended for?",
+        "hers": "Hers",
+        "his": "His",
+        "boys": "Boys",
+        "girls": "Girls",
+        "everyone": "Everyone"
+      },
+      "images": {
+        "_name": "images",
+        "sectionHeader": "Images",
+        "buttonTextUpload": "Upload Image",
+        "noImages": "No images exist. Try dropping some files here, or click above to select files to upload."
+      },
+      "pricing": {
+        "_name": "pricing",
+        "sectionHeader": "Pricing",
+        "basePrice": "Base Price",
+        "salePrice": "Sale Price"
+      },
+      "shipping": {
+        "_name": "shipping",
+        "sectionHeader": "Shipping",
+        "weight": "Weight",
+        "unitOfWeight": ["OZ", "G", "LB", "KG"],
+        "dimensions": "Shipping Dimensions",
+        "unitOfMeasure": "Unit of Measure",
+        "unitOfDimensions": ["IN", "CM"],
+        "length": "Length",
+        "height": "Height",
+        "width": "Width"
+      },
+      "inventory": {
+        "_name": "inventory",
+        "sectionHeader": "Inventory",
+        "sku": "SKU",
+        "inventory": "Inventory",
+        "allowCustomersToPurchase": "Allow customers to purchase this product when it's out of stock"
+      },
+      "variations": {
+        "_name": "variations",
+        "sectionHeader": "Variations",
+        "buttonTextReorderOptions": "Reorder Options",
+        "buttonTextEditOptions": "Edit Options",
+        "buttonTextAddOption": "Add Option",
+        "buttonTextEdit": "Edit",
+        "color": "Color",
+        "size": "Size",
+        "sku": "SKU",
+        "price": "Price",
+        "inventory": "Inventory"
+      },
+      "buttonText": "Delete Product",
+      "modals": {
+        "_name": "modals",
+        "editOptions": {
+          "_name": "editOptions",
+          "header": "Edit Options",
+          "buttonText": "Add another option"
+        },
+        "deleteOption": {
+          "_name": "deleteOption",
+          "header": "Delete",
+          "deleteVariants": "You're about to delete all",
+          "variants": "variants",
+          "withA": "with a",
+          "of": "of",
+          "actionCantBeUndone": "This action can't be undone.",
+          "buttonText": "Confirm Delete"
+        },
+        "reorderOption": {
+          "_name": "reorderOption",
+          "header": "Reorder variation options and values",
+          "buttonText": "Save Changes"
+        },
+        "editVariation": {
+          "_name": "editVariation",
+          "header": "Edit Variation",
+          "headerOptions": "Options",
+          "optionsText": "To edit options, close this modal and click the Edit Options button in the Variations section of this product.",
+          "color": "Color",
+          "size": "Size",
+          "headerPricing": "Pricing",
+          "basePrice": "Base Price",
+          "salePrice": "Sale Price",
+          "headerShipping": "Shipping",
+          "weight": "Weight",
+          "unitOfWeight": ["OZ", "G", "LB", "KG"],
+          "buttonTextVariationImage": "Set Variation Image",
+          "buttonText": "Save Changes"
+        }
+      }
+    }
+  }
+}

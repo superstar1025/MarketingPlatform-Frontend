@@ -1,0 +1,7 @@
+{
+  "_name": "authorization",
+  "loginPage": {
+    "_name": "loginPage",
+    "welcomeBack": "Dar una buena acogida!"
+  }
+}

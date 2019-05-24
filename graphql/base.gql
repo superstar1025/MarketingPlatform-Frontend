@@ -1,0 +1,158 @@
+query domains {
+  domains {
+    edges {
+      node {
+        id
+        label
+        company {
+          name
+        }
+        credits
+        paymentCardCount
+      }
+    }
+  }
+}
+
+query user {
+  user {
+    firstName
+  }
+}
+
+query wallet($id: String!) {
+  domains(id: $id) {
+    edges {
+      node {
+        id
+        defaultPaymentCard {
+          id,
+          brand,
+          last4
+        }
+        paymentCards {
+          id,
+          brand,
+          last4
+        }
+        addOnPlans{
+          id,
+          name,
+          amount
+        }
+        addOns{
+          subscriptionId,
+          planId,
+          name
+        }
+        invoices{
+          id,
+          startDatetime,
+          endDatetime,
+          url
+        }
+      }
+    }
+  }
+}
+
+mutation createDomain($label: String!) {
+  createDomain(input: { label: $label }) {
+    domain {
+      id
+    }
+  }
+}
+
+mutation addPaymentCards($domainId: String!, $sourceTokens: [String]!, $defaultSourceToken: String, $clientMutationId: String) {
+  addPaymentCards(input: { domainId: $domainId, sourceTokens: $sourceTokens, defaultSourceToken: $defaultSourceToken, clientMutationId: $clientMutationId }) {
+    domain{
+      id,
+      paymentCardCount
+      defaultPaymentCard{
+        id,
+        brand,
+        last4
+      }
+      paymentCards {
+        id,
+        brand,
+        last4
+      }
+    }
+  }
+}
+
+mutation addCredits($domainId: String!, $credits: Int!) {
+  addCredits(input: { domainId: $domainId, credits: $credits }) {
+    domain {
+      id,
+      credits
+    }
+  }
+}
+
+mutation setDefaultPaymentCard($domainId: String!, $cardId: String!) {
+  setDefaultPaymentCard(input: { domainId: $domainId, cardId: $cardId }) {
+    domain {
+      id,
+      defaultPaymentCard {
+        id,
+        brand,
+        last4
+      }
+    }
+  }
+}
+
+mutation deletePaymentCards($domainId: String!, $cardIds: [String]!) {
+  deletePaymentCards(input: { domainId: $domainId, cardIds: $cardIds }) {
+    domain {
+      id,
+      paymentCardCount
+      paymentCards {
+        id,
+        brand,
+        last4
+      }
+      defaultPaymentCard {
+        id,
+        brand,
+        last4
+      }
+    }
+  }
+}
+
+mutation createAddOns($domainId: String!, $addOnPlanIds: [String]!, $clientMutationId: String) {
+  createAddOns(input: { domainId: $domainId, addOnPlanIds: $addOnPlanIds, clientMutationId: $clientMutationId }) {
+    domain {
+      id,
+      credits,
+      addOnPlans{
+        id,
+        name,
+        amount
+      }
+      addOns{
+        subscriptionId,
+        planId,
+        name
+      }
+    }
+  }
+}
+
+mutation deleteAddOns($domainId: String!, $subscriptionIds: [String]!, $clientMutationId: String) {
+  deleteAddOns(input: { domainId: $domainId, subscriptionIds: $subscriptionIds, clientMutationId: $clientMutationId }) {
+    domain {
+      id,
+      credits,
+      addOns{
+        subscriptionId,
+        planId,
+        name
+      }
+    }
+  }
+}

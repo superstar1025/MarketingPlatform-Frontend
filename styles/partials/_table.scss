@@ -1,0 +1,81 @@
+.table {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @media screen and (min-width: 1000px) {
+    overflow-x: hidden;
+  }
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  display: flex;
+}
+
+.table-row-item {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 5px;
+  }
+}
+
+.table-headers {
+  padding: 15px 30px;
+}
+
+.row-collection {
+  margin-right: -15px;
+}
+
+.kv-table {
+  width: 100%;
+}
+
+.kv-table-row {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+  display: flex;
+}
+
+.kv-key-column-center-aligned {
+  width: 30%;
+}
+
+.kv-value-column-center-aligned {
+  width: 70%;
+}
+
+.kv-key-center-aligned {
+  color: $elliot-color-grey;
+  text-align: right;
+  padding: 0px 5px 0px 0px;
+}
+
+.kv-value-center-aligned {
+  text-align: left;
+  padding: 0px 0px 0px 5px;
+}
+
+.kv-key-column-edge-aligned {
+  width: 50%;
+}
+
+.kv-value-column-edge-aligned {
+  width: 50%;
+}
+
+.kv-key-edge-aligned {
+  color: $elliot-color-grey;
+  text-align: left;
+  padding: 0px;
+}
+
+.kv-value-edge-aligned {
+  text-align: right;
+  padding: 0px;
+}

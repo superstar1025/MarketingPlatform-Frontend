@@ -1,0 +1,88 @@
+{
+  "_name": "Settings",
+  "general": "GENERAL",
+    "branding": {
+      "_name": "Branding",
+      "header": "Upload or edit your brand’s avatar.",
+      "updateAvatar": "Update Avatar",
+      "avatarContent": ""
+    },
+    "businessDetails": {
+      "_name": "Business Details",
+      "header": "Edit and manage your basic business details.",
+      "companyName": "COMPANY NAME",
+      "email": "EMAIL",
+      "customerSupportNumber": "CUSTOMER SUPPORT NUMBER",
+      "address1": "ADDRESS 1",
+      "address2": "ADDRESS 2",
+      "city": "CITY",
+      "zipCode": "ZIP CODE",
+      "currency": "CURRENCY",
+      "country": "COUNTRY",
+      "state": "STATE"
+    },
+    "keyInformation": {
+      "_name": "Key Information",
+      "description": "Add and edit key information about your company and products.",
+      "tabs": [
+        "Facebook Pixel ID",
+        "Return Policy",
+        "Snapchat Pixel ID",
+        "Size Guide"
+      ],
+      "tabLabels": [
+        "FACEBOOK PIXEL ID",
+        "WHAT IS YOUR RETURN POLICY",
+        "SNAPCHAT PIXEL ID",
+        "WHAT IS YOUR SIZE GUIDE"
+      ]
+    },
+    "location": {
+      "_name": "Locations",
+      "description": "Add, edit and assign locations you ship from.",
+      "subDescription": "By default, your business details address is the default ship from location.",
+      "subTitle": "LOCATION",
+      "locationName": "LOCATION NAME",
+      "locationEmail": "LOCATION EMAIL",
+      "locationPhoneNumber": "LOCATION PHONE NUMBER",
+      "locationAdress1": "ADDRESS 1",
+      "locationAdress2": "ADDRESS 2",
+      "locationCity": "CITY",
+      "locationState": "STATE",
+      "locationZipCode": "ZIP CODE",
+      "locationCountry": "COUNTRY"
+    },
+    "payouts": {
+      "_name": "Payouts",
+      "description": "Connect Stripe or PayPal to receive payouts; note you can only have one activated.",
+      "stripeDescription": "Activate to connect your Stripe account to weekly deposits.",
+      "paypalDescription": "Activate and add your company PayPal email address to get daily deposits.",
+      "connectStripe": "Connect with Stripe",
+      "paypalEmailAddress": "PAYPAL ACCOUNT EMAIL ADDRESS"
+    },
+    "user": {
+      "_name": "User",
+      "firstName": "FIRST NAME",
+      "lastName": "LAST NAME",
+      "email": "EMAIL",
+      "owner": "Make this user the account owner",
+      "warning": "You are about to transfer ownership of this account to USER@EMAIL.io, after updating this user you will no longer have administrator access.",
+      "emailNotification": "* An email will be sent to the account owner email to confirm this change."
+    },
+    "promotion": {
+      "_name": "Promotions",
+      "description": "Active and add promotional codes to your checkout.",
+      "promoCode": "PROMO CODE",
+      "discount": "DISCOUNT",
+      "duration": "DURATION",
+      "from": "FROM",
+      "to": "TO",
+      "subTitle": "Basic Promotions",
+      "subDescription": "Add promotional discounts and set expiration.",
+      "addButton": "Add another promo code"
+    },
+    "shipping": {
+      "_name": "Shipping",
+      "description": "Add, edit and manage custom rates and settings."
+    }
+}

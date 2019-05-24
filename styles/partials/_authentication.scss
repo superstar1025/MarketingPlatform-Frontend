@@ -1,0 +1,38 @@
+.widget-page-container {
+  background-color: $elliot-color-background;
+  padding: 100px 15px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget-page-form-header {
+  color: $elliot-color-alternative;
+  line-height: 34px;
+  font-size: 26px;
+  margin-top: 15px;
+}
+
+.auth-page .widget-page-form-link {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.auth-page {
+  background-color: #ffffff;
+  border: 1px solid #eaedf3;
+  border-radius: 4px;
+  padding: 30px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 450px;
+  .widget-page-form-header,
+  .widget-page-form-link {
+    text-align: center;
+  }
+}
+
+.auth-form {
+  margin-top: 30px;
+}

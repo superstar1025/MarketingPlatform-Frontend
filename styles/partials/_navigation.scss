@@ -1,0 +1,240 @@
+.nav {
+  display: block;
+  flex-shrink: 0;
+  width: $navigation-bar-width;
+  height: 100%;
+  background-color: #252529;
+  .nav-inner-middle-menu-container:first-child {
+    margin-top: 15px;
+  }
+  .nav-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    .icofont-wallet {
+      color: $elliot-color-success;
+    }
+  }
+
+  .nav-inner-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 70px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    border-bottom: 1px solid #eaedf3;
+    border: 1px solid #2e2e33;
+  }
+
+  .nav-inner-middle {
+    height: auto;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    -ms-flex-preferred-size: 100px;
+    flex-basis: 100px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  .nav-inner-middle::-webkit-scrollbar {
+    background-color: #252529;
+  }
+
+  .nav-inner-bottom {
+    -ms-flex-preferred-size: 130px;
+    flex-basis: 130px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 25px;
+    border-top: 1px solid #2e2e33;
+  }
+
+  .nav-label {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: #9ea0a5;
+    line-height: 1.5rem;
+    display: block;
+    padding: 10px 30px;
+  }
+
+  .nav-link {
+    margin: 0 15px;
+    border: none;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: white;
+    min-height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .nav-link.active {
+    color: white;
+    font-weight: 500;
+    color: white;
+    background: $elliot-color-royal-blue;
+    -webkit-box-shadow: inset 3px 0 0 0 $elliot-color-royal-blue;
+    box-shadow: inset 3px 0 0 0 $elliot-color-royal-blue;
+  }
+
+  .nav-link:hover {
+    background: #292929;
+    -webkit-box-shadow: inset 3px 0 0 0 #292929;
+    box-shadow: inset 3px 0 0 0 #292929;
+  }
+
+  .active > * {
+    color: white;
+  }
+
+  .account-credits {
+    padding: 15px 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-top: 1px solid #2e2e33;
+    cursor: pointer;
+  }
+
+  .no-credits .credit-count,
+  .no-credits .icofont-wallet {
+    color: $elliot-color-failure;
+  }
+
+  .nav-inner-middle .revenue-streams,
+  .nav-inner-middle .support {
+    border-top: 1px solid #2e2e33;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  .copyright,
+  .credit-count {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin-bottom: 8px;
+    color: white;
+  }
+
+  .blue {
+    color: $elliot-color-royal-blue;
+  }
+
+  .green {
+    color: $elliot-color-success;
+  }
+
+  .revenue-streams .nav-label {
+    color: white;
+  }
+
+  .credit-count {
+    margin-bottom: 0;
+  }
+
+  .subtext {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+
+  .revenue-streams .nav-link {
+    min-height: 30px;
+  }
+
+  .revenue-streams .fa {
+    margin-right: 5px;
+  }
+
+  .progress-bar-holder {
+    -ms-flex-preferred-size: 140px;
+    flex-basis: 140px;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 210px;
+    height: 16px;
+    background: $elliot-color-success;
+    border-radius: 4px;
+    margin: 0 15px 15px 30px;
+  }
+
+  .progress-bar {
+    background: $elliot-color-royal-blue;
+    height: 16px;
+    border-radius: 4px 0 0 4px;
+    width: 57%;
+  }
+}
+
+.nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.nav svg {
+  max-width: 45px;
+  width: 100%;
+}
+
+.nav-burger {
+  display: none;
+}
+
+@include sm-screen {
+  .nav-burger {
+    display: block;
+  }
+  .nav {
+    display: none;
+  }
+
+  .nav-slider {
+    display: block;
+    transition: 0.8s;
+    width: 70%;
+  }
+}

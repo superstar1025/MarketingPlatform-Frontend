@@ -1,0 +1,35 @@
+.dashboard {
+  .latest-orders {
+    margin-top: 30px;
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
+    .loading-container {
+      padding: 30px;
+    }
+    .no-latest-order {
+      text-align: center;
+    }
+    .latest-orders-table {
+      overflow: auto;
+      td:first-child {
+        @media screen and (max-width: 768px) {
+          padding-left: 20px;
+        }
+        span {
+          text-transform: capitalize;
+        }
+        p {
+          font-size: .75rem;
+          color: $elliot-color-subtext;
+        }
+      }
+      td:last-child {
+        @media screen and (max-width: 768px) {
+          padding-right: 20px;
+        }
+        text-align: right;
+      }
+    }
+  }
+}

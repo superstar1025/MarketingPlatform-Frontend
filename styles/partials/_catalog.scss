@@ -1,0 +1,130 @@
+// EMPTY LIST
+.catalog-empty {
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+    margin-top: 15px;
+  }
+}
+
+.catalog-empty-headers {
+  text-align: center;
+}
+
+.catalog-empty-emoji {
+  height: 70px;
+  width: 70px;
+  font-size: 2.625rem;
+  background-color: #FFFFFF;
+  padding: 10px 10px 0 10px;
+  border: 1px solid $elliot-color-grey-border;
+  border-radius: $elliot-border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// FULL LIST
+.catalog-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .table-row-item:first-child {
+    width: calc(50px + 70px);
+  }
+
+  .table-row-item:not(:first-child) {
+    width: calc((100% - (50px + 70px)) * 0.33);
+  }
+  @include sm-screen {
+    .table-row-item:nth-of-type(1),
+    .table-row-item:nth-of-type(4) {
+      display: none;
+    }
+    .table-row-item:first-child,
+    .table-row-item:nth-of-type(2) {
+      width: 50%;
+    }
+  }
+}
+
+s {
+  color: $elliot-color-failure;
+}
+
+.out-of-stock,
+.in-stock {
+  @include rounded-border;
+  background-color: $elliot-color-background;
+  padding: 2px 6px;
+}
+
+.out-of-stock {
+  color: $elliot-color-failure;
+}
+
+.in-stock {
+  color: $elliot-color-success;
+}
+
+.edit-variant-properties {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-variant-image-upload,
+.edit-variant-image-upload {
+  display: flex;
+  align-items: center;
+
+  .image-upload-thumbnail {
+    @include thumbnail;
+    margin-right: 25px;
+    height: 65px;
+    width: 65px;
+  }
+}
+
+.add-attribute-button {
+  margin: 8px 0;
+}
+
+.variant-table.existing-variants {
+  margin-top: 0;
+}
+.variant-table {
+  margin-top: 30px;
+  overflow: auto;
+  th:last-of-type,
+  td:last-of-type {
+    width: 1px;
+    white-space: nowrap;
+  }
+  th:last-of-type,
+  td:first-of-type {
+    width: 1px;
+    white-space: nowrap;
+  }
+
+  td.sku-attribute-value:nth-of-type(2) {
+    color: $elliot-color-purple;
+  }
+  td.sku-attribute-value:nth-of-type(3) {
+    color: $elliot-color-seafoam;
+  }
+  td.sku-attribute-value:nth-of-type(4) {
+    color: $elliot-color-orange;
+  }
+}
+
+.variations-widget-header {
+  display: flex;
+
+  @include sm-screen {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

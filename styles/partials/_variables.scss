@@ -1,0 +1,47 @@
+// COLOR
+$elliot-color-background: #fbfbfd;
+$elliot-color-alternative: #3e3f42;
+$elliot-color-grey: #9ea0a5;
+$elliot-color-failure: #ff0029;
+$elliot-color-warning: #ff9f00;
+$elliot-color-success: #34aa44;
+$elliot-color-blue: #64ddff;
+$elliot-color-grey-border: #eaedf3;
+$elliot-color-subtext: #6b6c6f;
+$elliot-color-royal-blue: #1665d8;
+$elliot-color-purple: #9013fe;
+$elliot-color-seafoam: #50e3c2;
+$elliot-color-orange: #ed9300;
+
+// TYPOGRAPHY
+$elliot-font-family-default: "Roboto", sans-serif;
+$elliot-font-size-mobile: 12px;
+$elliot-font-size-default: 16px;
+$elliot-font-size-header: 1rem;
+$elliot-line-height-default: 22px;
+$elliot-font-weight-default: 400;
+
+// LAYOUT
+$elliot-border-radius: 4px;
+$navigation-bar-width: 270px;
+
+// SCREEN SIZES
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Z-INDEXES
+$delete-drag-item: 2;
+$draggable-z-index: 300;
+$animated-top-bar-z-index: 401;
+$modal-z-index: 500;
+$loading-spinner-z-index: 1200;
+
+// PADDING
+$base-padding-sm: 20px;
+$base-padding-lg: 30px;

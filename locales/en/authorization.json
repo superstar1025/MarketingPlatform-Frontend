@@ -1,0 +1,43 @@
+{
+  "_name": "authorization",
+  "forgotPasswordPage": {
+    "_name": "forgotPasswordPage",
+    "callToActionLink": "Register now",
+    "buttonText": "Send Reset Link",
+    "header": "Reset Password",
+    "question": "Don't have an account?",
+    "sentEmail": "We sent an email to reset your password to"
+  },
+  "formLabels": {
+    "_name": "formLabels",
+    "emailAddress": "E-mail Address",
+    "password": "Password",
+    "passwordConfirm": "Confirm Password",
+    "domain": "Domain Label",
+    "firstName": "First Name",
+    "lastName": "Last Name"
+  },
+  "loginPage": {
+    "_name": "loginPage",
+    "callToActionLink": "Register now",
+    "buttonText": "Login",
+    "header": "Login",
+    "question": "Don't have an account?",
+    "forgotPasswordQuestion": "Forgot?",
+    "passwordWasReset": "Your password was successfully reset. Please login."
+  },
+  "registerPage": {
+    "_name": "registerPage",
+    "buttonText": "Register",
+    "callToActionLink": "Login",
+    "header": "Create Account",
+    "question": "Already have an account?"
+  },
+  "resetPasswordPage": {
+    "_name": "resetPasswordPage",
+    "buttonText": "Confirm Password Reset",
+    "callToActionLink": "Register Now",
+    "header": "Confirm Password Reset",
+    "question": "Don't have an account?"
+  }
+}

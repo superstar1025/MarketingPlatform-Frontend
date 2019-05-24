@@ -1,0 +1,30 @@
+{
+  "_name": "formValidation",
+  "noWhitespace": "No whitespaces allowed",
+  "emailLength": "Email cannot be longer than 255 characters",
+  "emailNotValid": "E-mail is not valid",
+  "emailRequired": "E-mail is required",
+  "passwordRequired": "Password is required",
+  "passwordMinLength": "Password has to be longer than 8 characters",
+  "passwordMaxLength": "Password cannot be longer than 32 characters",
+  "passwordDoesntMatch": "Passwords do not match",
+  "passwordConfirmationRequired": "Password confirmation is required",
+  "firstNameRequired": "First name is required",
+  "firstNameMaxLength": "First name cannot be longer than 255 characters",
+  "lastNameRequired": "Last name is required",
+  "lastNameMaxLength": "Last name cannot be longer than 255 characters",
+  "domainRequired": "Domain is required",
+  "domainMaxLength": "Domain cannot be longer than 255 characters",
+  "networkError": "Sorry, we are currently experiencing network errors. Our team is on it and we will be back up shortly.",
+  "createProductForm": {
+    "_name": "createProductForm",
+    "titleRequired": "Product title is required"
+  },
+  "setting": {
+    "businessDetails": {
+      "_keyPath": "businessDetails",
+      "_name": "businessDetails",
+      "generalValidation": "generalValidation"
+    }
+  }
+}

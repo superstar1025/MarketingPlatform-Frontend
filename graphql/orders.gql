@@ -1,0 +1,110 @@
+query order($orderId: ID!) {
+  node(id: $orderId) {
+    ... on OrderNode {
+      id
+      createdOn
+      stripeId
+      customerName
+      customerEmail
+      customerPhoneNumber
+      shippingAddress1
+      shippingAddress2
+      shippingCity
+      shippingState
+      shippingZipCode
+      shippingCountry
+      shippingLabelUrl
+      packingSlipUrl
+      paymentMethod
+      shippingMethod
+      shippingTrackingNumber
+      shippingTrackingUrl
+      orderStatus
+      orderTotal
+      tax
+      shippingCost
+      vendorTotal
+      items {
+        id
+        sku {
+          basePrice
+          salePrice
+          attributes
+          image
+          product {
+            name
+            gender
+          }
+        }
+        quantity
+      }
+      campaigns(first: 1) {
+        edges {
+          node {
+            type
+            name
+          }
+        }
+      }
+    }
+  }
+}
+
+query orders(
+  $first: Int
+  $cursor: String
+  $orderStatusFilter: Float
+  $searchFilter: String
+  $orderBy: String
+  $domainId: ID!
+) {
+  node(id: $domainId) {
+    ... on DomainNode {
+      orders(
+        orderBy: $orderBy
+        first: $first
+        after: $cursor
+        orderStatus: $orderStatusFilter
+        stripeId_Icontains: $searchFilter
+      ) {
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+        }
+        edges {
+          node {
+            id
+            stripeId
+            customerName
+            orderStatus
+            orderTotal
+          }
+        }
+      }
+    }
+  }
+}
+
+query latestOrders(
+  $last: Int
+  $domainId: ID!
+) {
+  node(id: $domainId) {
+    ... on DomainNode {
+      orders(
+        last: $last
+      ) {
+        edges {
+          node {
+            id
+            stripeId
+            customerName
+            orderStatus
+            orderTotal
+          }
+        }
+      }
+    }
+  }
+}

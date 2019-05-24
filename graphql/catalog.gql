@@ -1,0 +1,312 @@
+query products(
+  $domainId: ID!
+  $first: Int!
+  $cursor: String
+  $searchFilter: String
+  $orderBy: String
+) {
+  node(id: $domainId) {
+    ... on DomainNode {
+      products(
+        orderBy: $orderBy
+        first: $first
+        after: $cursor
+        name_Icontains: $searchFilter
+      ) {
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+        }
+        edges {
+          node {
+            name
+            id
+            description
+            gender
+            variantCount
+            quantity
+            activeCampaignCount
+            images(orderBy: "orderingPosition", first: 1) {
+              edges {
+                node {
+                  id
+                  image
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query product($productId: ID!) {
+  node(id: $productId) {
+    ... on ProductNode {
+      id
+      name
+      description
+      gender
+      htsCode
+      attributes
+      stripeId
+      domain {
+        id
+      }
+      skus {
+        edges {
+          node {
+            id
+            stripeId
+            sku
+            attributes
+            basePrice
+            salePrice
+            quantity
+            unitOfWeight
+            weight
+            unitOfDimensions
+            height
+            width
+            length
+            image
+          }
+        }
+      }
+      images(orderBy: "orderingPosition") {
+        edges {
+          node {
+            id
+            image
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation createProduct(
+  $domainId: String!
+  $name: String!
+  $description: String
+  $gender: Int
+  $htsCode: String
+  $attributes: [AttributesInputObject]
+) {
+  createProduct(
+    input: {
+      domainId: $domainId
+      name: $name
+      description: $description
+      gender: $gender
+      htsCode: $htsCode
+      attributes: $attributes
+    }
+  ) {
+    product {
+      id
+      stripeId
+    }
+  }
+}
+
+mutation createSku(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $skus: [CreateSkuInputObject]!
+) {
+  createSku(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      skus: $skus
+    }
+  ) {
+    skus {
+      id
+    }
+  }
+}
+
+mutation createOrUpdateSkus(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $skus: [CreateOrUpdateSkusInputObject]
+) {
+  createOrUpdateSkus(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      skus: $skus
+    }
+  ) {
+    skus {
+      id
+    }
+  }
+}
+
+mutation uploadProductImage(
+  $domainId: String!
+  $productId: String!
+  $images: [ProductImageInputObject]!
+) {
+  uploadProductImage(
+    input: { domainId: $domainId, productId: $productId, images: $images }
+  ) {
+    product {
+      images(orderBy: "orderingPosition") {
+        edges {
+          node {
+            id
+            image
+            orderingPosition
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation uploadSkuImage($domainId: String!, $skuId: String!, $image: Upload!) {
+  uploadSkuImage(input: { domainId: $domainId, skuId: $skuId, image: $image }) {
+    sku {
+      id
+    }
+  }
+}
+
+mutation deleteSku($domainId: String!, $skus: [RemoveSkuInputObject]) {
+  deleteSku(input: { domainId: $domainId, skus: $skus }) {
+    success
+  }
+}
+
+mutation updateProduct(
+  $domainId: String!
+  $id: String
+  $stripeId: String
+  $name: String
+  $description: String
+  $gender: Int
+  $htsCode: String
+) {
+  updateProduct(
+    input: {
+      domainId: $domainId
+      id: $id
+      stripeId: $stripeId
+      name: $name
+      description: $description
+      htsCode: $htsCode
+      gender: $gender
+    }
+  ) {
+    product {
+      id
+      stripeId
+    }
+  }
+}
+
+mutation updateProductAttributes(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $attributes: [AttributesInputObject]!
+) {
+  updateProductAttributes(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      attributes: $attributes
+    }
+  ) {
+    product {
+      id
+      stripeId
+    }
+  }
+}
+
+mutation deleteAttribute(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $attributeKey: String!
+) {
+  deleteAttribute(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      attributeKey: $attributeKey
+    }
+  ) {
+    product {
+      attributes
+    }
+  }
+}
+
+mutation deleteAttributeValue(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $attribute: AttributeInputObject!
+) {
+  deleteAttributeValue(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      attribute: $attribute
+    }
+  ) {
+    product {
+      attributes
+    }
+  }
+}
+
+query skuCount(
+  $productId: ID!
+  $attributeKey: String
+  $attributeValue: String
+) {
+  node(id: $productId) {
+    ... on ProductNode {
+      id
+      skuCount(attributeKey: $attributeKey, attributeValue: $attributeValue)
+    }
+  }
+}
+
+mutation updateAttributes(
+  $domainId: String!
+  $productId: String
+  $stripeProductId: String
+  $renames: [RenameAttributeKeyInput]
+  $additions: [AddAttributeInput]
+) {
+  updateAttributes(
+    input: {
+      domainId: $domainId
+      productId: $productId
+      stripeProductId: $stripeProductId
+      renames: $renames
+      additions: $additions
+    }
+  ) {
+    product {
+      id
+    }
+  }
+}

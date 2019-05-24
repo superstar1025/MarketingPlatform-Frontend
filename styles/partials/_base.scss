@@ -1,0 +1,149 @@
+html {
+  @include elliot-font-family-body;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root,
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+#draggable {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: $draggable-z-index;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: $elliot-color-background;
+  color: $elliot-color-alternative;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body a {
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a {
+  color: #1665d8;
+  background-color: transparent;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: #9013fe;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+p {
+  font-size: 14px;
+}
+
+input,
+button {
+  padding: 8px 15px;
+  height: 38px;
+}
+
+textarea {
+  padding: 15px;
+}
+
+.section-header {
+  font-size: $elliot-font-size-header;
+  font-weight: 500;
+  line-height: 24px;
+  color: $elliot-color-alternative;
+}
+
+.section-header-subtext {
+  font-size: $elliot-font-size-header;
+  color: $elliot-color-subtext;
+  line-height: 24px;
+}
+
+.subtext {
+  @include subtext;
+}
+.light-text {
+  color: $elliot-color-grey;
+}
+
+.error-message {
+  @include error-message;
+}
+
+.success-message {
+  @include success-message;
+}
+
+.green-text {
+  color: $elliot-color-success;
+}
+
+.total {
+  font-weight: 600;
+}
+
+.header {
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 32px;
+}
+.subheader {
+  font-weight: 400;
+}
+
+.hover-hand {
+  cursor: pointer;
+}
+
+.active-filter {
+  border-bottom: 3px solid $elliot-color-royal-blue;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.label {
+  @include label;
+}
+
+.break-word {
+  word-break: break-word;
+}

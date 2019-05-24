@@ -1,0 +1,251 @@
+query CompanyNode($id: String!) {
+  domains(id: $id) {
+    edges {
+      node {
+        id
+        freeShippingThreshold
+        company {
+          id
+          createdOn
+          modifiedOn
+          name
+          email
+          address {
+            id
+            createdOn
+            modifiedOn
+            name
+            address1
+            address2
+            city
+            state
+            zipCode
+            country
+          }
+          customerSupportNumber
+          currency
+          returnPolicy
+          sizeGuide
+          avatar
+        }
+        promotions {
+          edges {
+            node {
+              id
+              createdOn
+              modifiedOn
+              label
+              startDatetime
+              endDatetime
+              discountValue
+              discountType
+              stripeCouponCode
+            }
+          }
+        }
+        campaignTrackingPixels(last: 2){
+          edges {
+            node {
+              platform
+              pixel
+              modifiedOn
+              createdOn
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query shippingLocations($id: String!){
+  domains(id: $id) {
+    edges {
+      node {
+        id
+        shippingLocations {
+          edges {
+            node {
+              id
+              name
+              address1
+              address2
+              city
+              state
+              zipCode
+              country
+              email
+              phoneNumber
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query Users($domainId: String!) {
+  domains(id: $domainId) {
+    edges {
+      node {
+        id
+        users {
+          edges {
+            node {
+              id
+              isSuperuser
+              firstName
+              lastName
+              email
+              invitationToken
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation uploadCompanyAvatar($domainId: String!, $image: Upload!) {
+  uploadCompanyAvatar(input: { domainId: $domainId, image: $image }) {
+    company {
+      avatar
+    }
+  }
+}
+mutation createCampaignTrackingPixel($domainId: String!, $platform: Int!, $pixel: String!) {
+  createCampaignTrackingPixel(input: { domainId: $domainId, platform: $platform, pixel: $pixel }) {
+    campaignTrackingPixel {
+      id
+      platform
+      pixel
+    }
+  }
+}
+mutation updateCompany(
+  $domainId: String!,
+  $name: String,
+  $email: String,
+  $customerSupportNumber: String,
+  $returnPolicy: String,
+  $sizeGuide: String,
+  $currency: String
+) {
+  updateCompany(input: {
+     domainId: $domainId, name: $name, email: $email, customerSupportNumber: $customerSupportNumber,
+     returnPolicy: $returnPolicy, sizeGuide: $sizeGuide, currency: $currency
+  }) {
+    company {
+      id
+      name
+      email
+      customerSupportNumber
+      currency
+      address {
+        id
+        address1
+        address2
+        zipCode
+        city
+        country
+        state
+      }
+      returnPolicy
+      sizeGuide
+    }
+  }
+}
+
+mutation createShippingLocation($domainId: String!, $shippingLocations:[CreateShippingLocationInputObject]! ) {
+  createShippingLocation(input: {
+    domainId: $domainId,
+    shippingLocations: $shippingLocations
+  }) {
+    domain {
+      id
+      label
+    }
+  }
+}
+
+mutation updateShippingLocation($domainId: String!, $shippingLocations: [UpdateShippingLocationInputObject]!) {
+  updateShippingLocation(input: {domainId: $domainId, shippingLocations: $shippingLocations}) {
+    domain {
+      id
+      label
+    }
+  }
+}
+
+mutation deleteShippingLocation($domainId: String!, $shippingLocationIds: [String]! ) {
+  deleteShippingLocation(input: {
+    domainId: $domainId,
+    shippingLocationIds: $shippingLocationIds
+  }) {
+    success
+  }
+}
+
+mutation addUser($domainId: String!, $firstName: String, $lastName: String, $email: String! ) {
+  addUser(input: {
+    domainId: $domainId,
+    firstName: $firstName,
+    lastName: $lastName,
+    email: $email
+  }) {
+    user {
+      id
+    }
+  }
+}
+
+mutation updateUser($domainId: String!, $id: String!, $firstName: String, $lastName: String ) {
+  updateUser(input: {
+    domainId: $domainId,
+    id: $id,
+    firstName: $firstName,
+    lastName: $lastName,
+  }) {
+    user {
+      id
+    }
+  }
+}
+
+mutation removeUserFromDomain($domainId: String!, $id: String!) {
+  removeUserFromDomain(input: {
+    domainId: $domainId,
+    id: $id
+  }) {
+    success
+  }
+}
+
+mutation updateDomain($id: String!, $freeShippingThreshold: Int) {
+  updateDomain(input: {id: $id, freeShippingThreshold: $freeShippingThreshold}) {
+    domain {
+      label
+      id
+      freeShippingThreshold
+    }
+  }
+}
+
+mutation removeFreeShippingThreshold($domainId: String!) {
+  removeFreeShippingThreshold(input: {domainId: $domainId}) {
+    success
+  }
+}
+mutation createPromotion($domainId: String!, $promotions: [CreatePromotionInputObject]!) {
+  createPromotion(input: {domainId: $domainId, promotions: $promotions}) {
+    promotions {
+      id
+    }
+  }
+}
+
+mutation deletePromotion($domainId: String!, $promotionIds: [String]!) {
+  deletePromotion(input: {domainId: $domainId, promotionIds: $promotionIds}) {
+    success
+  }
+}

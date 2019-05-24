@@ -1,0 +1,18 @@
+{
+  "_name": "navigation",
+  "menu": "Menu",
+  "dashboard": "Dashboard",
+  "catalog": "Catalog",
+  "orders": "Orders",
+  "settings": "Settings",
+  "revenueStreams": "Revenue Streams",
+  "buyNowLinks": "Buy Now Links",
+  "qrCodes": "QR Codes",
+  "support": "Support",
+  "featureRequest": "Feature Request",
+  "knowledgeBase": "Knowledge Base",
+  "availableCredits": "Available Credits",
+  "updateWalletSettings": "Update your Wallet Settings",
+  "copyRight": "Hello I am Elliot, Inc. 2019.",
+  "companyDescription": "A mobile-first platform for sellers who hate excessive fees, middlemen, plugins and other pointless bullshit."
+}
